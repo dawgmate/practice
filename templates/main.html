@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} Home page {% endblock %}
+{% block content %}
+
+<h1>Main Page</h1>
+        <p>На цьому сайті Ви можете отримати агрегацію новин останньої доби з одного з-поміж кількох новинних сайтів</p>
+        <p>Щоб зробити це, потрібно вибрати сайт з випадаючого списку і натиснути кнопку</p>
+        <form action="#", class="form_select", method="POST", style="text-align: center;padding: 10px;">
+          <p><select id="select site", name="sel", size="1">
+              <option disabled>Select News publisher</option>
+              <option value="https://www.pravda.com.ua/news/">Українська правда</option>
+              <option value="https://socportal.info/">Соцпортал</option>
+          </select></p>
+          <p><input class="btn btn-lg btn-primary btn-block" style="width: 200px; margin: auto;" type="submit"></input></p>
+        </form>
+        
+{% endblock %}

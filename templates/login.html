@@ -1,0 +1,35 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>{% block title %} Log in {% endblock %}</title>
+    <link rel="icon" href="/static/images/icon.png"
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+<link href="https://getbootstrap.com/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="/static/css/signin.css" rel="stylesheet">
+
+<form action="#" class="form-signin", method="POST", style="text-align: center;padding-top: 80px;">
+    {% block content %}
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for msg in messages %}
+            <p style="text-align: center;padding-top: 20px;">{{msg}}</p>
+          {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <img class="mb-4" src="/static/images/icon.png" alt="" width="72" height="51">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <input type="login" name="nm" id="inputEmail" class="form-control" placeholder="Login" required autofocus>
+    <input type="password" name="pw" id="inputPassword" class="form-control" placeholder="Password" required>
+    <p><input class="btn btn-lg btn-primary btn-block" type="submit"></input></p>
+    <p>You didn't signed up yet? Do it <a class="reference internal" href="{{url_for('register')}}">now</a>!</p>
+    <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+</form>
+
+{% endblock %}
